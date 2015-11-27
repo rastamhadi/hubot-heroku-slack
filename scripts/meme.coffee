@@ -57,8 +57,8 @@ module.exports = (robot) ->
   robot.respond /meme iron price (.+)/i, id: 'meme.iron-price', (msg) ->
     memeGenerator msg, 'q06KuA', msg.match[1], 'Pay the iron price'
 
-  robot.respond /meme brace yourself (.+)/i, id: 'meme.brace-yourself', (msg) ->
-    memeGenerator msg, '_I74XA', 'Brace Yourself', msg.match[1]
+  robot.respond /meme brace yoursel(f|ves) (.+)/i, id: 'meme.brace-yourself', (msg) ->
+    memeGenerator msg, '_I74XA', "Brace Yoursel#{msg.match[1]}", msg.match[2]
 
   robot.respond /meme (.+) (ALL the .+)/i, id: 'meme.all-the-things', (msg) ->
     memeGenerator msg, 'Dv99KQ', msg.match[1], msg.match[2]
