@@ -58,7 +58,7 @@ module.exports = (robot) ->
     wtfs = wtfs + 1
     robot.brain.set("wtfs", wtfs)
 
-    res.send("#{digitize(wtfs)}")
+    res.send("#{digitize(wtfs)} W.T.F.")
 
   robot.hear /\bOTL\b/i, (res) ->
 
@@ -66,7 +66,7 @@ module.exports = (robot) ->
     otls = otls + 1
     robot.brain.set("otls", otls)
 
-    res.send("#{digitize(otls)} orz")
+    res.send("#{digitize(otls)} O.T.L.")
 
   wtfreport = new cronJob(REPORT_TIME, ->
                 wtfs = robot.brain.get("wtfs") * 1 or 0
