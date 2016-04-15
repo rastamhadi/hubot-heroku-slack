@@ -8,6 +8,7 @@
 #
 # Commands:
 #   hubot meme friday <text> - Meme: Rebecca Black - Friday
+#   hubot meme <text> yes we can - Meme: Barrack Obama - Yes We Can
 #   hubot meme Y U NO <text> - Meme: Y U NO GUY w/ bottom caption
 #   hubot meme I don't always <something> but when i do <text> - Meme: The Most Interesting man in the World
 #   hubot meme <text> (SUCCESS|NAILED IT) - Meme: Success kid w/ top caption
@@ -47,6 +48,9 @@ module.exports = (robot) ->
   robot.respond /meme friday( .+)?/i, id: 'meme.friday', (msg) ->
     friday = if msg.match[1]? then msg.match[1].trim() else 'friday'
     memeGenerator msg, '5NvNaw', "it's #{friday} #{friday}", "gotta get down on #{friday}"
+
+  robot.respond /meme (.*)yes we can(.*)/i, id: 'meme.yes-we-can', (msg) ->
+    memeGenerator msg, 'Q9bYTg', msg.match[1], msg.match[2]
 
   robot.respond /meme Y U NO (.+)/i, id: 'meme.y-u-no', (msg) ->
     memeGenerator msg, 'NryNmg', 'Y U NO', msg.match[1]
